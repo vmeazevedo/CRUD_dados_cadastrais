@@ -17,7 +17,7 @@ try:
         user=user,
         password=password
     )
-    print("\nConexão estabelecida!")
+    print("\nConexão estabelecida!\n")
     cursor = connection.cursor()
 except mysql.connector.Error as err:
     print(err)
@@ -27,7 +27,7 @@ cursor.execute("CREATE DATABASE IF NOT EXISTS dados_cadastrais")
 cursor.execute("USE dados_cadastrais")
 cursor.execute("CREATE TABLE IF NOT EXISTS info_cadastrais(id INT AUTO_INCREMENT, Nome VARCHAR(100), Cpf VARCHAR(20), Endereço VARCHAR(100), Telefone VARCHAR(20), Email VARCHAR(100), Data_Nascimento VARCHAR(100), Idade INT(4), Sexo VARCHAR(2), primary key (id))")
 
-print("\nTabela criada com sucesso!")
+
 #=================================================================================
 
 
@@ -153,7 +153,7 @@ def consulta_base():
     dados = cursor.fetchall()
     # Imprimindo os resultados
     for registro in dados:
-        print("\nid: {}\nNome: {}\nCPF: {}\nEndereço: {}\nTelefone: {}\nE-mail: {}\nData de Nascimento: {}\nIdade: {}\nGênero: {}\n".format(registro[0],registro[1],registro[2],registro[3],registro[4],registro[5],registro[6],registro[7],registro[8]))
+        print("\nid: {}\nNome: {}\nCPF: {}\nEndereço: {}\nTelefone: {}\nEmail: {}\nData de Nascimento: {}\nIdade: {}\nGênero: {}\n".format(registro[0],registro[1],registro[2],registro[3],registro[4],registro[5],registro[6],registro[7],registro[8]))
     
     # Commitar query e fechar conexões
     connection.commit()
@@ -168,7 +168,7 @@ def consulta_id():
     dados = cursor.fetchall()
     # Imprimindo os resultados
     for registro in dados:
-        print("\nid: {}\nNome: {}\nCPF: {}\nEndereço: {}\nTelefone: {}\nE-mail: {}\nData de Nascimento: {}\nIdade: {}\nGênero: {}\n".format(registro[0],registro[1],registro[2],registro[3],registro[4],registro[5],registro[6],registro[7],registro[8]))
+        print("\nid: {}\nNome: {}\nCPF: {}\nEndereço: {}\nTelefone: {}\nEmail: {}\nData de Nascimento: {}\nIdade: {}\nGênero: {}\n".format(registro[0],registro[1],registro[2],registro[3],registro[4],registro[5],registro[6],registro[7],registro[8]))
     
     # Commitar query e fechar conexões
     connection.commit()
@@ -188,7 +188,7 @@ def consulta_id_valores():
     for registro in dados:
         for valor in valores:
             if valor in registro:
-                print("\nid: {}\nNome: {}\nCPF: {}\nEndereço: {}\nTelefone: {}\nE-mail: {}\nData de Nascimento: {}\nIdade: {}\nGênero: {}\n".format(registro[0],registro[1],registro[2],registro[3],registro[4],registro[5],registro[6],registro[7],registro[8]))
+                print("\nid: {}\nNome: {}\nCPF: {}\nEndereço: {}\nTelefone: {}\nEmail: {}\nData de Nascimento: {}\nIdade: {}\nGênero: {}\n".format(registro[0],registro[1],registro[2],registro[3],registro[4],registro[5],registro[6],registro[7],registro[8]))
     
     # Commitar query e fechar conexões
     connection.commit()
@@ -203,7 +203,7 @@ def consulta_nome():
     dados = cursor.fetchall()
     # Imprimindo os resultados
     for registro in dados:
-        print("\nid: {}\nNome: {}\nCPF: {}\nEndereço: {}\nTelefone: {}\nE-mail: {}\nData de Nascimento: {}\nIdade: {}\nGênero: {}\n".format(registro[0],registro[1],registro[2],registro[3],registro[4],registro[5],registro[6],registro[7],registro[8]))
+        print("\nid: {}\nNome: {}\nCPF: {}\nEndereço: {}\nTelefone: {}\nEmail: {}\nData de Nascimento: {}\nIdade: {}\nGênero: {}\n".format(registro[0],registro[1],registro[2],registro[3],registro[4],registro[5],registro[6],registro[7],registro[8]))
     
     # Commitar query e fechar conexões
     connection.commit()
@@ -219,7 +219,7 @@ def consulta_cpf():
     dados = cursor.fetchall()
     # Imprimindo os resultados
     for registro in dados:
-        print("\nid: {}\nNome: {}\nCPF: {}\nEndereço: {}\nTelefone: {}\nE-mail: {}\nData de Nascimento: {}\nIdade: {}\nGênero: {}\n".format(registro[0],registro[1],registro[2],registro[3],registro[4],registro[5],registro[6],registro[7],registro[8]))
+        print("\nid: {}\nNome: {}\nCPF: {}\nEndereço: {}\nTelefone: {}\nEmail: {}\nData de Nascimento: {}\nIdade: {}\nGênero: {}\n".format(registro[0],registro[1],registro[2],registro[3],registro[4],registro[5],registro[6],registro[7],registro[8]))
     
     # Commitar query e fechar conexões
     connection.commit()
@@ -234,7 +234,7 @@ def consulta_endereco():
     dados = cursor.fetchall()
     # Imprimindo os resultados
     for registro in dados:
-        print("\nid: {}\nNome: {}\nCPF: {}\nEndereço: {}\nTelefone: {}\nE-mail: {}\nData de Nascimento: {}\nIdade: {}\nGênero: {}\n".format(registro[0],registro[1],registro[2],registro[3],registro[4],registro[5],registro[6],registro[7],registro[8]))
+        print("\nid: {}\nNome: {}\nCPF: {}\nEndereço: {}\nTelefone: {}\nEmail: {}\nData de Nascimento: {}\nIdade: {}\nGênero: {}\n".format(registro[0],registro[1],registro[2],registro[3],registro[4],registro[5],registro[6],registro[7],registro[8]))
     
     # Commitar query e fechar conexões
     connection.commit()
@@ -250,7 +250,7 @@ def consulta_telefone():
     dados = cursor.fetchall()
     # Imprimindo os resultados
     for registro in dados:
-        print("\nid: {}\nNome: {}\nCPF: {}\nEndereço: {}\nTelefone: {}\nE-mail: {}\nData de Nascimento: {}\nIdade: {}\nGênero: {}\n".format(registro[0],registro[1],registro[2],registro[3],registro[4],registro[5],registro[6],registro[7],registro[8]))
+        print("\nid: {}\nNome: {}\nCPF: {}\nEndereço: {}\nTelefone: {}\nEmail: {}\nData de Nascimento: {}\nIdade: {}\nGênero: {}\n".format(registro[0],registro[1],registro[2],registro[3],registro[4],registro[5],registro[6],registro[7],registro[8]))
     
     # Commitar query e fechar conexões
     connection.commit()
@@ -266,7 +266,7 @@ def consulta_email():
     dados = cursor.fetchall()
     # Imprimindo os resultados
     for registro in dados:
-        print("\nid: {}\nNome: {}\nCPF: {}\nEndereço: {}\nTelefone: {}\nE-mail: {}\nData de Nascimento: {}\nIdade: {}\nGênero: {}\n".format(registro[0],registro[1],registro[2],registro[3],registro[4],registro[5],registro[6],registro[7],registro[8]))
+        print("\nid: {}\nNome: {}\nCPF: {}\nEndereço: {}\nTelefone: {}\nEmail: {}\nData de Nascimento: {}\nIdade: {}\nGênero: {}\n".format(registro[0],registro[1],registro[2],registro[3],registro[4],registro[5],registro[6],registro[7],registro[8]))
 
     # Commitar query e fechar conexões
     connection.commit()
@@ -297,29 +297,113 @@ def consulta_data_nascimento():
     dados = cursor.fetchall()
     # Imprimindo os resultados
     for registro in dados:  
-        print("\nid: {}\nNome: {}\nCPF: {}\nEndereço: {}\nTelefone: {}\nE-mail: {}\nData de Nascimento: {}\nIdade: {}\nGênero: {}\n".format(registro[0],registro[1],registro[2],registro[3],registro[4],registro[5],registro[6],registro[7],registro[8]))
+        print("\nid: {}\nNome: {}\nCPF: {}\nEndereço: {}\nTelefone: {}\nEmail: {}\nData de Nascimento: {}\nIdade: {}\nGênero: {}\n".format(registro[0],registro[1],registro[2],registro[3],registro[4],registro[5],registro[6],registro[7],registro[8]))
     
     # Commitar query e fechar conexões
     connection.commit()
     cursor.close()
     connection.close()
 
+# FUNÇÃO DE ALTERAÇÃO PELO ID
+def altera_pelo_id():
+    id_alterar = str(input("\nDigite o ID que deseja alterar: "))
+    Nome = str(input("\nDigite o novo nome: ")).title()
+    valida_nome(Nome)
+    
+    CPF = str(input("Digite o novo CPF: "))
+    valida_cpf(CPF)
+    
+    Endereco = str(input("Digite o novo endereço: ")).title()
+    
+    Telefone = str(input("Digite o novo telefone: "))
+    valida_telefone(Telefone)
+    
+    Email = str(input("Digite o novo e-mail: "))
+    valida_email(Email)
+    
+    Data_Nascimento = str(input("Digite a nova data de nascimento: "))
+    valida_nascimento(Data_Nascimento)
+    
+    Idade = str(input("Digite a nova idade: "))
+    
+    Sexo = str(input("Digite o novo gênero: ")).title()
+    valida_sexo(Sexo)
 
+    # ATUALIZAÇÃO DOS DADOS CADASTRAIS
+    cursor.execute("UPDATE info_cadastrais SET Nome = '{}', CPF = '{}', Endereço = '{}', Telefone = '{}', Email = '{}', Data_Nascimento = '{}', Idade = '{}', Sexo = '{}' WHERE id = '{}'".format(Nome,CPF,Endereco,Telefone,Email,Data_Nascimento,Idade,Sexo,id_alterar))
+    
+    # Commitar query e fechar conexões
+    connection.commit()
+    cursor.close()
+    connection.close()
 
+    print("Dados atualizados com sucesso!")
 
+# FUNÇÃO DE DELETAÇÃO PELO ID
+def deleta_pelo_id():
+    while True:
+        id_deletar = str(input("\nDigite o ID que deseja deletar: "))
+        cursor.execute("SELECT * FROM info_cadastrais WHERE id = {}".format(id_deletar))
+        # Recuperando todos os registros
+        dados = cursor.fetchall()
+        # Imprimindo os resultados
+        for registro in dados:
+            print("\nid: {}\nNome: {}\nCPF: {}\nEndereço: {}\nTelefone: {}\nEmail: {}\nData de Nascimento: {}\nIdade: {}\nGênero: {}\n".format(registro[0],registro[1],registro[2],registro[3],registro[4],registro[5],registro[6],registro[7],registro[8]))
+        
+        choice = input("Confirme se é esse o registro que gostaria de deletar? [S/N]: ").upper()
+        if choice == "S":
+            cursor.execute("DELETE FROM info_cadastrais WHERE id = {}".format(id_deletar))
+            # Commitar query e fechar conexões
+            connection.commit()
+            cursor.close()
+            connection.close()
+            print("Registro deletado com sucesso!")
+            break
+        elif choice == "N":
+            print("Por favor selecione o registro correto")
+        else:
+            print("\nOpção inválida!")
+            
 
+#=================================================================================
+# MENU PRINCIPAL
+#=================================================================================
+while True:
+    print("#=================================#")
+    print("          MENU PRINCIPAL ")
+    print("#=================================#")
 
-
-
-cadastro()
-#consulta_base()
-#consulta_id()
-#consulta_id_valores()
-#consulta_nome()
-#consulta_cpf()
-#consulta_endereco()
-#consulta_telefone()
-#consulta_email()
-#consulta_data_nascimento()
-#consulta_idade()
-
+    print("\n1 - Cadastrar\n2 - Consultar Base\n3 - Consultar pelo Id\n4 - Consultar Id Valores\n5 - Consultar Nome\n6 - Consultar CPF\n7 - Consultar Endereço\n8 - Consultar Telefone\n9 - Consultar Email\n10 - Consultar Data de Nascimento\n11 - Consultar Idade\n12 - Alterar pelo Id\n13 - Deletar pelo Id\n14 - Sair")
+    
+    opcao = int(input("\nDigite a opção que deseja: "))
+    if opcao == 1:
+        cadastro()
+    elif opcao == 2:
+        consulta_base()
+    elif opcao == 3:
+        consulta_id()
+    elif opcao == 4:
+        consulta_id_valores()
+    elif opcao == 5:
+        consulta_nome()
+    elif opcao == 6:
+        consulta_cpf()
+    elif opcao == 7:
+        consulta_endereco()
+    elif opcao == 8:
+        consulta_telefone()
+    elif opcao == 9:
+        consulta_email()
+    elif opcao == 10:
+        consulta_data_nascimento()
+    elif opcao == 11:
+        consulta_idade()
+    elif opcao == 12:
+        altera_pelo_id()
+    elif opcao == 13:
+        deleta_pelo_id()
+    elif opcao == 14:
+        break
+    else:
+        print("\nOpção inválida!")
+    
