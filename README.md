@@ -1,2 +1,4 @@
 # CRUD_lista_info
-lista de informações
+A preencher ainda.
+
+CRUD de dados cadastrais com validação de campos.
